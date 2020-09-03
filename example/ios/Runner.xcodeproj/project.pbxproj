@@ -10,13 +10,8 @@
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		24EE314BE92EE3EADBCFAD25 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63356C7BFA3556436CF6C660 /* libPods-Runner.a */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
-		847E088E247155230010CA71 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 847E088D247155230010CA71 /* libsqlite3.tbd */; };
-		847E0890247155360010CA71 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 847E088F247155360010CA71 /* libc++.tbd */; };
-		847E0892247155440010CA71 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 847E0891247155440010CA71 /* libxml2.tbd */; };
 		847E08942471554B0010CA71 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847E08932471554B0010CA71 /* QuartzCore.framework */; };
-		847E0896247155520010CA71 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847E0895247155520010CA71 /* CoreLocation.framework */; };
 		847E0898247155590010CA71 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847E0897247155590010CA71 /* SystemConfiguration.framework */; };
-		847E089A247155600010CA71 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847E0899247155600010CA71 /* OpenGLES.framework */; };
 		978B8F6F1D3862AE00F588F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFFD8EE1D35381100E5BB4D /* AppDelegate.m */; };
 		97C146F31CF9000F007C117D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C146F21CF9000F007C117D /* main.m */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -70,13 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847E089A247155600010CA71 /* OpenGLES.framework in Frameworks */,
 				847E0898247155590010CA71 /* SystemConfiguration.framework in Frameworks */,
-				847E0896247155520010CA71 /* CoreLocation.framework in Frameworks */,
 				847E08942471554B0010CA71 /* QuartzCore.framework in Frameworks */,
-				847E0892247155440010CA71 /* libxml2.tbd in Frameworks */,
-				847E0890247155360010CA71 /* libc++.tbd in Frameworks */,
-				847E088E247155230010CA71 /* libsqlite3.tbd in Frameworks */,
 				24EE314BE92EE3EADBCFAD25 /* libPods-Runner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,10 +18,8 @@ A new flutter plugin project.
   s.dependency 'Flutter'
   s.platform = :ios, '8.0'
   s.preserve_paths = 'DaumMap.framework'
-  s.xcconfig = {
-    'OTHER_LDFLAGS' => '-framework DaumMap',
-    "FRAMEWORK_SEARCH_PATHS" => '${PODS_ROOT}/../flutter_kakao_map/DaumMap.embeddedframework/DaumMap.framework'
-  }
+  s.frameworks = 'DaumMap', 'CoreLocation', 'OpenGLES'
+  s.libraries = 'c++', 'sqlite3', 'xml2'
   s.resources = 'DaumMap.embeddedframework/Resources/**/*'
   s.vendored_frameworks = 'DaumMap.embeddedframework/DaumMap.framework'
   
