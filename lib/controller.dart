@@ -64,6 +64,11 @@ class KakaoMapController {
           .onCameraMove(mapId: mapId)
           .listen((e) => {_kakaoMapState.widget.onCameraMove(e.value)});
     }
+    if (_kakaoMapState.widget.onCameraZoomChanged != null) {
+      _kakaoMapsFlutterPlatform
+          .onCameraZoomChanged(mapId: mapId)
+          .listen((e) => {_kakaoMapState.widget.onCameraZoomChanged(e.value)});
+    }
     if (_kakaoMapState.widget.onCurrentLocationUpdate != null) {
       _kakaoMapsFlutterPlatform.onCurrentLocationUpdate(mapId: mapId).listen(
           (e) => {_kakaoMapState.widget.onCurrentLocationUpdate(e.value)});

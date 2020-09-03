@@ -148,6 +148,7 @@ class MapViewBodyState extends State<MapViewBody> {
       currentLocationTrackingMode: _currentLocationTrackingMode,
       myLocationEnabled: _myLocationEnabled,
       onCameraMove: _updateCameraPosition,
+      onCameraZoomChanged: _updateCameraZoom,
       onCurrentLocationUpdate: _onCurrentLocationUpdate,
     );
 
@@ -200,7 +201,13 @@ class MapViewBodyState extends State<MapViewBody> {
 
   void _updateCameraPosition(CameraPosition position) {
     setState(() {
-      _position = position;
+      _position = CameraPosition(target: position.target, zoom: _position.zoom);
+    });
+  }
+
+  void _updateCameraZoom(double zoom) {
+    setState(() {
+      _position = CameraPosition(target: _position.target, zoom: zoom);
     });
   }
 

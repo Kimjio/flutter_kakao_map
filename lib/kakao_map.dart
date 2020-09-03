@@ -42,6 +42,7 @@ class KakaoMap extends StatefulWidget {
     this.markers,
     this.onCameraMoveStarted,
     this.onCameraMove,
+    this.onCameraZoomChanged,
     this.onCurrentLocationUpdate,
     this.onCameraIdle,
     this.onMarkerSelect,
@@ -114,6 +115,9 @@ class KakaoMap extends StatefulWidget {
 
   /// 지도 중심 좌표가 이동한 경우 호출된다.
   final CameraPositionCallback onCameraMove;
+
+  /// 지도 확대 비율을 변경한 경우 호출된다.
+  final CameraZoomCallback onCameraZoomChanged;
 
   /// CurrentLocationEventListener interface를 구현하는 객체를 MapView 객체에 등록하여
   /// 현위치 트래킹 이벤트를 통보받을 수 있다.

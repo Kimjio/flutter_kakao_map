@@ -231,6 +231,11 @@ abstract class KakaoMapsFlutterPlatform extends PlatformInterface {
     throw UnimplementedError('onCameraMove() has not been implemented.');
   }
 
+  /// The Camera finished zooming to a new [CameraPosition].
+  Stream<CameraZoomEvent> onCameraZoomChanged({@required int mapId}) {
+    throw UnimplementedError('onCameraZoomChanged() has not been implemented.');
+  }
+
   /// The Camera is now idle.
   Stream<CameraIdleEvent> onCameraIdle({@required int mapId}) {
     throw UnimplementedError('onCameraMove() has not been implemented.');

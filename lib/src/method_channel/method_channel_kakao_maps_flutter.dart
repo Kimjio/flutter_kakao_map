@@ -72,6 +72,11 @@ class MethodChannelKakaoMapsFlutter extends KakaoMapsFlutterPlatform {
   }
 
   @override
+  Stream<CameraZoomEvent> onCameraZoomChanged({@required int mapId}) {
+    return _events(mapId).whereType<CameraZoomEvent>();
+  }
+
+  @override
   Stream<CameraCurrentLocationEvent> onCurrentLocationUpdate(
       {@required int mapId}) {
     return _events(mapId).whereType<CameraCurrentLocationEvent>();
@@ -131,6 +136,12 @@ class MethodChannelKakaoMapsFlutter extends KakaoMapsFlutterPlatform {
           CameraPosition(
               target: MapPoint(call.arguments['position'][0],
                   call.arguments['position'][1])),
+        ));
+        break;
+      case 'camera#onZoomChanged':
+        _mapEventStreamController.add(CameraZoomEvent(
+          mapId,
+          call.arguments['zoom'],
         ));
         break;
       case 'camera#onIdle':

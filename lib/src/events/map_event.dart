@@ -93,6 +93,14 @@ class CameraMoveEvent extends MapEvent<CameraPosition> {
   CameraMoveEvent(int mapId, CameraPosition position) : super(mapId, position);
 }
 
+/// An event fired while the Camera of a [mapId] zooms.
+class CameraZoomEvent extends MapEvent<double> {
+  /// Build a CameraZoom Event triggered from the map represented by `mapId`.
+  ///
+  /// The `value` of this event is a [int] with the current zoom of the Camera.
+  CameraZoomEvent(int mapId, double zoom) : super(mapId, zoom);
+}
+
 /// An event fired when the Camera of a [mapId] becomes idle.
 class CameraIdleEvent extends MapEvent<void> {
   /// Build a CameraIdle Event triggered from the map represented by `mapId`.

@@ -29,7 +29,7 @@ class Convert {
         return Arrays.asList(mapPoint.getMapPointGeoCoord().latitude, mapPoint.getMapPointGeoCoord().longitude);
     }
 
-        static CameraUpdate toCameraUpdate(Object o, float density) {
+    static CameraUpdate toCameraUpdate(Object o, float density) {
         final List<?> data = toList(o);
         switch (toString(data.get(0))) {
             case "newMapPoint":

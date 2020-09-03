@@ -220,6 +220,8 @@ public class KakaoMapController
             case "map#clearMapTilePersistentCache":
             {
                 MapView.clearMapTilePersistentCache();
+                result.success(true);
+                break;
             }
             case "map#getMapCenterPoint":
             {
@@ -316,6 +318,16 @@ public class KakaoMapController
             {
                 break;
             }
+            case "map#zoomIn":
+            {
+                mapView.zoomIn(true);
+                break;
+            }
+            case "map#zoomOut":
+            {
+                mapView.zoomOut(true);
+                break;
+            }
             default:
                 result.notImplemented();
         }
@@ -328,6 +340,7 @@ public class KakaoMapController
         }
         disposed = true;
         methodChannel.setMethodCallHandler(null);
+        mapView.surfaceDestroyed(null);
         setKakaoMapListener(null);
         getApplication().unregisterActivityLifecycleCallbacks(this);
     }
@@ -701,7 +714,9 @@ public class KakaoMapController
     // 지도 확대/축소 레벨이 변경된 경우 호출된다.
     @Override
     public void onMapViewZoomLevelChanged(MapView mapView, int i) {
-
+        final Map<String, Object> arguments = new HashMap<>(2);
+        arguments.put("zoom", mapView.getZoomLevelFloat());
+        methodChannel.invokeMethod("camera#onZoomChanged", arguments);
     }
 
     // 사용자가 지도 위를 터치한 경우 호출된다.
@@ -748,7 +763,8 @@ public class KakaoMapController
     // APP KEY 는 Android Application Package Name당 하나씩 카카오 개발자 APP KEY 발급 페이지 를 통해서 발급할 수 있다.
     @Override
     public void onDaumMapOpenAPIKeyAuthenticationResult(MapView mapView, int i, String s) {
-        mapView.setMapCenterPointAndZoomLevel(this.options.initialCameraPosition.target, 3, true);
+        mapView.setMapCenterPoint(this.options.initialCameraPosition.target, true);
+        mapView.setZoomLevelFloat(this.options.initialCameraPosition.zoomLevel, true);
         markersController.setKakaoMap(mapView);
     }
 

@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:flutter_kakao_map/flutter_kakao_map.dart';
+
 import 'types.dart';
 
 /// Callback that receives updates to the camera position.
@@ -11,6 +13,14 @@ import 'types.dart';
 ///
 /// This is used in [KakaoMap.onCameraMove].
 typedef void CameraPositionCallback(CameraPosition position);
+
+/// Callback that receives updates to the camera zoom.
+///
+/// This callback is triggered when the platform Kakao Map
+/// registers a camera zoom.
+///
+/// This is used in [KakaoMap.onCameraZoomChanged].
+typedef void CameraZoomCallback(double zoom);
 
 typedef void MarkerSelectCallback(MarkerTag markerId);
 
