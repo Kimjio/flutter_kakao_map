@@ -7,6 +7,7 @@
  * Copyright 2012 Daum Communications Corp. All rights reserved.
  */
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <DaumMap/MTMapGeometry.h>
 
